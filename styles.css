@@ -1,0 +1,29 @@
+body {
+    font-family: 'Alef', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Assistant', sans-serif;
+    color: #F4B400;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+footer {
+    background-color: #F2F2F2;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
