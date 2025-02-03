@@ -8,21 +8,360 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Alef:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- Favicon -->
+<link rel="icon" type="image/png" href="/assets/images/logo-md.png">
 </head>
 <body>
-    <header>
-        <h1>ברוכים הבאים לסטודיו My Dream</h1>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="/assets/images/logo-md.png" alt="My Dream Studio Logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> אודות</a></li>
+                <li><a href="#services"><i class="fas fa-dumbbell"></i> שירותים</a></li>
+                <li><a href="#schedule"><i class="fas fa-calendar-alt"></i> מערכת שעות</a></li> <!-- Updated to Schedule -->
+                <li><a href="#contact"><i class="fas fa-envelope"></i> יצירת קשר</a></li>
+            </ul>
+        </nav>
+        <div class="cta">
+            <a href="https://api.whatsapp.com/message/IAW5UHXY5D6QL1?autoload=1&app_absent=0" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> צרו קשר בוואצפ
+            </a>
+        </div>
     </header>
-    <section data-aos="fade-up">
-        <p>אימון אישי וקבוצות קטנות בדרך שלכם להצלחה</p>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>אם אתה יכול לחלום את זה,<br>אתה יכול לעשות את זה</h1>
+            <p data-aos="fade-in" data-aos-delay="300">
+                הצטרפו לסטודיו My Dream והגשימו את המטרות שלכם!
+            </p>
+            <a href="#contact" class="cta-button" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">צור קשר עכשיו</a>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2025 My Dream Studio</p>
-    </footer>
+    
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-down">
+                    <img src="/assets/images/about-reuven.jpg" alt="אודות רועי, מאמן הסטודיו">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h2 class="about-title">על הסטודיו שלנו</h2>
+                    <p class="about-description">
+                        בסטודיו My Dream, אנו שמים דגש על מתאמנים ברמה הגבוהה ביותר עם יחס אישי,
+                        תוכניות אימון מותאמות אישית, ושיפור אורח חיים. כאן אנו משיגים יחד את המטרות שלך 
+                        ועוזרים לך להצליח בצורה בריאה ומאוזנת.
+                    </p>
+                    <p class="about-highlight">
+                        צוות המאמנים שלנו מביאים איתם מקצועיות, ידע, וניסיון שלא תמצאו בשום מקום אחר.
+                    </p>
+                    <a href="#contact" class="cta-button">צור קשר עכשיו</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="services-title" data-aos="fade-down">השירותים שלנו</h2>
+            <div class="services-grid">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-dumbbell service-icon"></i>
+                    <h3 class="service-title">אימונים אישיים</h3>
+                    <p class="service-description">
+                        תוכניות מותאמות אישית שיסייעו לך להשיג את מטרות הכושר שלך במהירות וביעילות.
+                    </p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-users service-icon"></i>
+                    <h3 class="service-title">אימונים קבוצתיים</h3>
+                    <p class="service-description">
+                        חווית אימון משותפת עם תמיכה ומוטיבציה מהקבוצה.
+                    </p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-heartbeat service-icon"></i>
+                    <h3 class="service-title">שיפור אורח חיים</h3>
+                    <p class="service-description">
+                        תמיכה מקצועית בבריאות ותזונה ליצירת איזון מושלם בחייך.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <h2 class="schedule-title" data-aos="fade-down">מערכת שעות</h2>
+            <div class="schedule-grid">
+                <!-- Sunday -->
+                <div class="day-column" data-aos="fade-up">
+                    <h3 class="day-title">יום ראשון</h3>
+                    <div class="session">
+                        <time>08:30</time>
+                        <p>Morning Power</p>
+                    </div>
+                    <div class="session">
+                        <time>18:00</time>
+                        <p>אימון כוח קבוצתי</p>
+                    </div>
+                    <div class="session">
+                        <time>20:00</time>
+                        <p>אימון כוח תחנות</p>
+                    </div>
+                </div>
+    
+                <!-- Monday -->
+                <div class="day-column" data-aos="fade-up">
+                    <h3 class="day-title">יום שני</h3>
+                    <div class="session" >
+                        <time>08:30</time>
+                        <p>Full Body Power</p>
+                    </div>
+                    <div class="session" >
+                        <time>09:30</time>
+                        <p>אימון פונקציונלי</p>
+                    </div>
+                    <div class="session" >
+                        <time>19:00</time>
+                        <p>Full Body Power</p>
+                    </div>
+                    <div class="session" >
+                        <time>20:00</time>
+                        <p>אימון פונקציונלי</p>
+                    </div>
+                </div>
+    
+                <!-- Tuesday -->
+                <div class="day-column" data-aos="fade-up">
+                    <h3 class="day-title">יום שלישי</h3>
+                    <div class="session" >
+                        <time>08:30</time>
+                        <p>Morning Power</p>
+                    </div>
+                    <div class="session" >
+                        <time>09:30</time>
+                        <p>אימון כוח תחנות</p>
+                    </div>
+                    <div class="session" >
+                        <time>18:00</time>
+                        <p>אימון כוח קבוצתי</p>
+                    </div>
+                    <div class="session" >
+                        <time>20:00</time>
+                        <p>אימון כוח תחנות</p>
+                    </div>
+                </div>
+    
+                <!-- Wednesday -->
+                <div class="day-column" data-aos="fade-up">
+                    <h3 class="day-title">יום רביעי</h3>
+                    <div class="session" >
+                        <time>08:30</time>
+                        <p>Full Body Power</p>
+                    </div>
+                    <div class="session" >
+                        <time>09:30</time>
+                        <p>אימון פונקציונלי</p>
+                    </div>
+                    <div class="session" >
+                        <time>19:00</time>
+                        <p>Full Body Power</p>
+                    </div>
+                    <div class="session" >
+                        <time>20:00</time>
+                        <p>אימון פונקציונלי</p>
+                    </div>
+                </div>
+    
+                <!-- Thursday -->
+                <div class="day-column" data-aos="fade-up">
+                    <h3 class="day-title">יום חמישי</h3>
+                    <div class="session" >
+                        <time>08:30</time>
+                        <p>Morning Power</p>
+                    </div>
+                    <div class="session" >
+                        <time>09:30</time>
+                        <p>אימון כוח תחנות</p>
+                    </div>
+                    <div class="session" >
+                        <time>18:00</time>
+                        <p>אימון כוח קבוצתי</p>
+                    </div>
+                    <div class="session" >
+                        <time>20:00</time>
+                        <p>אימון כוח תחנות</p>
+                    </div>
+                </div>
+    
+                <!-- Friday -->
+                <div class="day-column" data-aos="fade-up">
+                    <h3 class="day-title">יום שישי</h3>
+                    <div class="session" >
+                        <time>09:00</time>
+                        <p>אימון פונקציונלי</p>
+                    </div>
+                    <div class="session" >
+                        <time>10:00</time>
+                        <p>שישי 10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">שאלות נפוצות</h2>
+            <div class="faq-items">
+                <!-- FAQ Item 1 -->
+                <div x-data="{ open: false }" class="faq-item">
+                    <button class="faq-question" @click="open = !open">
+                        כמה זמן נמשכת כל שיעור? 
+                        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div x-show="open" class="faq-answer" x-transition>
+                        <p>כל שיעור נמשך כ-60 דקות וכולל חימום, פעילות מרכזית וסיום מתיחות.</p>
+                    </div>
+                </div>
+    
+                <!-- FAQ Item 2 -->
+                <div x-data="{ open: false }" class="faq-item">
+                    <button class="faq-question" @click="open = !open">
+                        מה כוללים המנויים שלכם?
+                        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div x-show="open" class="faq-answer" x-transition>
+                        <p>המנויים שלנו כוללים גישה לשיעורים אישיים, קבוצתיים וציוד חדיש, בהתאם לחבילה שנבחרה.</p>
+                    </div>
+                </div>
+    
+                <!-- FAQ Item 3 -->
+                <div x-data="{ open: false }" class="faq-item">
+                    <button class="faq-question" @click="open = !open">
+                        האם יש מקום לחניה?
+                        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div x-show="open" class="faq-answer" x-transition>
+                        <p>כן, יש חניה חינם במקום ובסביבה הקרובה של הסטודיו.</p>
+                    </div>
+                </div>
+    
+                <!-- FAQ Item 4 -->
+                <div x-data="{ open: false }" class="faq-item">
+                    <button class="faq-question" @click="open = !open">
+                        האם יש אימונים מותאמים אישית?
+                        <i :class="open ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
+                    </button>
+                    <div x-show="open" class="faq-answer" x-transition>
+                        <p>בוודאי, אנו מתאימים תוכניות אימון אישיות לכל לקוח בהתאם לצרכים ולמטרות האישיות.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="contact-title" data-aos="fade-down">צור קשר</h2>
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form" data-aos="zoom-in">
+                    <h3>השאירו פרטים ונחזור אליכם:</h3>
+                    <form action="https://formspree.io/f/example" method="POST">
+                        <div class="form-group">
+                            <label for="name">שם מלא:</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required placeholder="הכניסו את שמכם">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">אימייל:</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required placeholder="הכניסו את כתובת האימייל שלכם">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">הודעה:</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="הקלידו את הודעתכם כאן..."></textarea>
+                        </div>
+                        <button type="submit" class="contact-button">שלח הודעה</button>
+                    </form>
+                </div>
+    
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="zoom-out" data-aos-delay="200">
+                    <h3>פרטי יצירת קשר</h3>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> 052-653-3179</li>
+                        <li><i class="fas fa-envelope"></i> Reuvenpasay122@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> יעקב פריימן 5, ראשון לציון</li>
+                    </ul>
+                    <h3>עקבו אחרינו</h3>
+                    <ul class="social-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559455048171" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/reuven_pasay/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://api.whatsapp.com/message/IAW5UHXY5D6QL1?autoload=1&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3 class="footer-title">על הסטודיו</h3>
+                    <p>My Dream Studio מציע חווית אימון אישית ומקצועית עם המתקנים והציוד המתקדמים ביותר.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">ניווט מהיר</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">אודות</a></li>
+                        <li><a href="#services">שירותים</a></li>
+                        <li><a href="#schedule">מערכת שעות</a></li>
+                        <li><a href="#contact">יצירת קשר</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">צור קשר</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+972XXXXXXXXX">052-653-3179</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:Reuvenpasay122@gmail.com">Reuvenpasay122@gmail.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> יעקב פריימן 5, ראשון לציון</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">עקבו אחרינו</h3>
+                    <ul class="footer-social">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559455048171" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/reuven_pasay/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://api.whatsapp.com/message/IAW5UHXY5D6QL1?autoload=1&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+    <p>
+        &copy; 2025 My Dream Studio. כל הזכויות שמורות. 
+        <span>פיתוח על ידי 
+            <a href="https://fumez-wd.netlify.app/" target="_blank" rel="noopener noreferrer">
+                פיומז - עיצובי אתרים
+            </a>
+        </span>
+    </p>
+</div>
+</footer>
+    
+
     <script src="scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
 </body>
 </html>

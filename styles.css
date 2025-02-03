@@ -1,29 +1,1255 @@
+/* General Styles */
 body {
     font-family: 'Alef', sans-serif;
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: #FFFFFF; /* White background */
+    color: #333333; /* Dark gray text for readability */
     margin: 0;
     padding: 0;
+    direction: rtl; /* Right-to-left alignment for Hebrew */
+    text-align: center; /* Center align all text by default */
+    line-height: 1.6; /* Improved readability */
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scroll for modern browsers */
+}
+
+
+h1, h2, h3 {
+    font-family: 'Assistant', sans-serif; /* Stylish font for headings */
+    margin: 20px 0;
+    color: #F4B400; /* Bold yellow color for headings */
 }
 
 h1 {
-    font-family: 'Assistant', sans-serif;
-    color: #F4B400;
-    text-align: center;
-    margin-top: 20px;
+    font-size: 2.8rem; /* Increased font size for main heading */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for visibility */
 }
 
 p {
-    font-size: 18px;
-    text-align: center;
+    font-size: 1.1rem; /* Slightly larger font for clarity */
     margin: 10px auto;
+    max-width: 600px; /* Limit paragraph width for better readability */
 }
 
-footer {
-    background-color: #F2F2F2;
+/* Section Styles */
+section {
+    padding: 60px 20px;
+    background-color: #FFFFFF;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+}
+
+section:nth-child(even) {
+    background-color: #F9F9F9; /* Alternate background for sections */
+}
+
+/* Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F4F4F4; /* Light gray background */
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    position: fixed; /* Sticky positioning */
+    top: 0; /* Stick to the top of the viewport */
+    width: 100%; /* Full width to cover the entire viewport */
+    z-index: 1000; /* Ensure the header stays above other elements */
+    height: 70px; /* Fixed height for consistency */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for sticky effect */
+}
+
+/* Ensure content below the header is not hidden */
+body {
+    padding-top: 70px; /* Matches the header height */
+}
+
+/* Logo Styles */
+.logo img {
+    max-width: 90px; /* Logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Styles */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px; /* Space between nav items */
+    align-items: center; /* Align items vertically */
+}
+
+.main-nav ul li {
+    font-size: 1rem;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333333; /* Dark gray text */
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px; /* Add padding for clickable area */
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.main-nav ul li a i {
+    margin-left: 5px; /* Space between icon and text */
+}
+
+.main-nav ul li a:hover {
+    color: #FFFFFF; /* White text on hover */
+    background-color: #F4B400; /* Yellow background on hover */
+}
+
+/* WhatsApp Button */
+.cta {
+    display: flex;
+    align-items: center;
+    margin-left: 70px; /* Add space to move the button slightly to the right */
+}
+
+.whatsapp-btn {
+    background-color: #25D366; /* WhatsApp green */
+    color: #FFFFFF; /* White text */
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effect */
+}
+
+.whatsapp-btn:hover {
+    background-color: #1EBE56; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.whatsapp-btn:active {
+    transform: scale(0.95); /* Click effect */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: row; /* Arrange elements horizontally */
+        justify-content: space-between; /* Space out the logo and CTA button */
+        align-items: center; /* Align items vertically */
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        height: auto; /* Allow dynamic height */
+    }
+
+    .logo {
+        order: 1; /* Move logo to the right */
+    }
+
+    .cta {
+        order: 2; /* Move CTA button to the left */
+    }
+
+    .main-nav {
+        display: none; /* Hide navigation links */
+    }
+
+    .whatsapp-btn {
+        margin: 0; /* Reset margins for proper alignment */
+        margin-left: -30px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('assets/images/hero-bg.png') no-repeat center center/cover;
+    height: 94vh; /* Full-screen height for better visual impact */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF; /* White text */
+    position: relative;
+    padding: 0 20px; /* Add horizontal padding for smaller screens */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay for a balanced look */
+    z-index: 1;
+    backdrop-filter: blur(3px); /* Subtle blur effect for modern design */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Above the overlay */
+    max-width: 800px; /* Slightly wider for larger screens */
+    padding: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Ensure text remains readable */
+}
+
+.hero h1 {
+    font-family: 'Assistant', sans-serif;
+    font-size: 3.5rem; /* Larger font for main heading */
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Slight letter spacing for better readability */
+}
+
+.hero p {
+    font-family: 'Alef', sans-serif;
+    font-size: 1.3rem; /* Slightly larger for readability */
+    margin-bottom: 30px;
+    line-height: 1.6; /* Comfortable line spacing */
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    background-color: #F4B400; /* Bright yellow */
+    color: #000000; /* Black text */
+    padding: 15px 40px; /* Increased padding for better button feel */
+    border-radius: 50px; /* Fully rounded button for modern look */
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.cta-button:hover {
+    background-color: #FF9E40; /* Slightly darker yellow on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.cta-button:active {
+    transform: scale(0.95); /* Click effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 93vh; /* Slightly reduce height on small screens */
+        padding: 0 15px; /* Extra padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; /* Slightly increase font size to fit text better */
+        line-height: 1.2; /* Adjust line height for compact spacing */
+        word-break: break-word; /* Ensure proper line breaks */
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* Adjust paragraph size */
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 30px; /* Reduce padding for smaller buttons */
+    }
+}
+
+/* Responsive Design for Mobile (480px and below) */
+@media (max-width: 480px) {
+    .hero {
+        height: 93vh; /* Slightly reduce height */
+        padding: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+        line-height: 1.3; /* Compact line height */
+        word-break: break-word; /* Ensure proper wrapping */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size for readability */
+    }
+
+    .cta-button {
+        font-size: 1rem; /* Adjust button size */
+        padding: 10px 25px; /* Reduce padding for smaller buttons */
+    }
+}
+
+/* General About Section Styles */
+.about-section {
+    background: linear-gradient(180deg, #ffffff, #f9f9f9); /* Subtle gradient for background */
+    color: #333333; /* Dark text color for readability */
+    padding: 100px 20px; /* Spacious padding for desktop */
+    font-family: 'Alef', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content on smaller screens */
+    gap: 40px; /* Space between image and text */
+    align-items: center;
+}
+
+/* About Image */
+.about-image {
+    flex: 1;
+    max-width: 30%; /* Further reduce width to 30% */
+    margin: 0 auto; /* Center the image container */
+    text-align: center; /* Ensure alignment remains visually appealing */
+}
+
+.about-image img {
+    width: 100%; /* Ensure the image fits its container */
+    height: auto; /* Maintain the original aspect ratio */
+    border-radius: 10px; /* Slightly tighter rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Reduced shadow intensity */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.02); /* Minimal zoom effect */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12); /* Softer hover shadow */
+}
+
+
+
+/* About Text */
+.about-text {
+    flex: 1;
+    max-width: 50%; /* Take up half the width */
+    text-align: right; /* Align text to the right for Hebrew */
+}
+
+.about-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #F4B400; /* Theme yellow */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #F4B400;
+    margin: 10px 0 0 auto;
+    border-radius: 2px;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.about-highlight {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FF9E40; /* Accent orange */
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #F4B400;
+    color: #FFFFFF;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-family: 'Assistant', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF9E40; /* Slightly darker on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center-align content for tablets */
+    }
+
+    .about-image,
+    .about-text {
+        max-width: 100%; /* Full width for stacked layout */
+    }
+
+    .about-title {
+        font-size: 2.4rem; /* Adjust font size */
+    }
+
+    .about-description,
+    .about-highlight {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-description,
+    .about-highlight {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+}
+
+
+/* General Services Section Styles */
+.services-section {
+    background: linear-gradient(180deg, #FFFFFF, #F4F4F4); /* Subtle gradient */
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Title */
+.services-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #F4B400; /* Theme yellow */
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.services-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 4px;
+    background-color: #F4B400;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Services Grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Service Item */
+.service-item {
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 280px;
+    min-width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #FFFAE5; /* Subtle highlight on hover */
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 3rem;
+    color: #F4B400;
+    margin-bottom: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    color: #FF9E40; /* Slightly darker yellow on hover */
+    transform: scale(1.1); /* Subtle zoom effect on icon */
+}
+
+/* Service Title */
+.service-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover .service-title {
+    color: #FF9E40; /* Accent orange on hover */
+}
+
+/* Service Description */
+.service-description {
+    font-family: 'Alef', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666666;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover .service-description {
+    color: #333333; /* Darker description text on hover */
+}
+
+/* Overlay Effect */
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.3s ease;
+    z-index: 0; /* Behind text and icons */
+    border-radius: 15px;
+}
+
+.service-item:hover::before {
+    background: rgba(255, 153, 64, 0.1); /* Light orange overlay on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column; /* Stack services vertically on small screens */
+        gap: 20px;
+    }
+
+    .service-item {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 2.4rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem; /* Slightly smaller icons on mobile */
+    }
+}
+
+/* General Schedule Section Styles */
+.schedule-section {
+    background: linear-gradient(180deg, #333333, #1a1a1a);
+    color: #FFFFFF;
+    padding: 80px 20px; /* Adjusted padding for more balance */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Add padding for better alignment */
+}
+
+/* Schedule Title */
+.schedule-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.8rem; /* Slightly larger for impact */
+    font-weight: bold;
+    color: #F4B400;
+    margin-bottom: 40px; /* More space below title */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.schedule-title::after {
+    content: '';
+    display: block;
+    width: 120px; /* Wider underline for visual appeal */
+    height: 4px;
+    background-color: #F4B400;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Schedule Grid for All Screens */
+.schedule-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Keep all columns in a single row */
+    gap: 20px; /* Space between columns */
+    overflow-x: auto; /* Enable horizontal scrolling by default */
+    padding-bottom: 10px;
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+}
+
+
+/* Customize Scrollbar */
+.schedule-grid::-webkit-scrollbar {
+    height: 10px; /* Larger scrollbar for usability */
+}
+
+.schedule-grid::-webkit-scrollbar-thumb {
+    background: #F4B400;
+    border-radius: 10px;
+}
+
+.schedule-grid::-webkit-scrollbar-track {
+    background: #444444;
+}
+
+/* Day Column */
+.day-column {
+    background: #444444;
+    border-radius: 10px;
+    padding: 20px; /* Increased padding for a polished look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    flex: 1;
+    min-width: calc(16.66% - 15px); /* Six equal-width columns */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day-column:hover {
+    transform: translateY(-8px); /* More pronounced hover effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Day Title */
+.day-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #F4B400;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F4B400;
+    padding-bottom: 10px;
+}
+
+/* Session Styles */
+.session {
+    background: #555555;
+    padding: 12px 15px; /* Comfortable padding */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.session:hover {
+    transform: scale(1.08); /* Slight zoom on hover */
+    background: #666666;
+}
+
+time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.session p {
+    font-family: 'Alef', sans-serif;
+    font-size: 1rem;
+    color: #F4B400;
+    margin: 0;
+}
+
+/* Subtle Highlighted Day Column */
+.day-column.highlight {
+    background: #555555; /* Slightly lighter background */
+    border: 2px solid #F4B400; /* Subtle yellow border */
+    color: #FFFFFF; /* Keep text color consistent */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day-column.highlight .day-title {
+    color: #F4B400; /* Subtle yellow for the day title */
+    font-weight: bold; /* Slightly emphasize the title */
+}
+
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .schedule-grid {
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+
+    .day-column {
+        min-width: 180px; /* Adjust column size for tablets */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .schedule-title {
+        font-size: 2.4rem;
+    }
+
+    .day-title {
+        font-size: 1.5rem;
+    }
+
+    .schedule-grid {
+        gap: 15px; /* Reduce gap for smaller screens */
+    }
+
+    .day-column {
+        min-width: 160px;
+    }
+
+    .session {
+        padding: 10px 12px;
+    }
+
+    time {
+        font-size: 1rem;
+    }
+
+    .session p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .schedule-title {
+        font-size: 2rem;
+    }
+
+    .day-title {
+        font-size: 1.4rem;
+    }
+
+    time {
+        font-size: 0.9rem;
+    }
+
+    .session p {
+        font-size: 0.8rem;
+    }
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    background: linear-gradient(180deg, #f9f9f9, #ffffff);
+    padding: 80px 20px;
+    font-family: 'Alef', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* FAQ Title */
+.faq-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.8rem;
+    color: #f4b400;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.faq-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #f4b400;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* FAQ Items */
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* FAQ Item */
+.faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ Question */
+.faq-question {
+    background: #f4f4f4;
+    color: #333333;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: right;
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question i {
+    color: #f4b400;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 15px 20px;
+    background: #ffffff;
+    color: #666666;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 2.2rem;
+    }
+
+    .faq-question {
+        font-size: 1.2rem;
+    }
+
+    .faq-answer {
+        font-size: 1rem;
+    }
+}
+
+
+/* General Contact Section Styles */
+.contact-section {
+    background: linear-gradient(180deg, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    padding: 80px 20px;
+    font-family: 'Alef', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Contact Title */
+.contact-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.8rem;
+    color: #f4b400;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.contact-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #f4b400;
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+/* Contact Form */
+.contact-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f4b400;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background: #f5f5f5;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #f4b400;
+    outline: none;
+}
+
+.contact-button {
+    background: #f4b400;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-family: 'Assistant', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+    background: #ff9e40;
+    transform: translateY(-3px);
+}
+
+/* Contact Info */
+.contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #f4b400;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.contact-info ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center icons and text */
+    gap: 12px;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+.contact-info ul li i {
+    font-size: 1.2rem;
+    color: #f4b400;
+    margin-right: 10px;
+}
+
+/* Social Links */
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links li a {
+    font-size: 1.7rem;
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #f4b400;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.4rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+}
+
+
+/* General Footer Styles */
+.footer-section {
+    background: linear-gradient(180deg, #2e2e2e, #1a1a1a); /* Gradient background for a sleek look */
+    color: #f5f5f5; /* Soft white text for readability */
+    padding: 80px 20px 30px;
+    font-family: 'Alef', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Footer Top */
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid layout */
+    gap: 40px; /* Space between columns */
+    margin-bottom: 50px;
+}
+
+/* Footer Columns */
+.footer-column {
+    text-align: left;
+}
+
+.footer-title {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.8rem;
+    color: #f4b400;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: right; /* Align the headings to the right */
+}
+
+.footer-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #f4b400;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+/* Footer About Section */
+.footer-column p {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: right; /* Align all text to the right */
+    color: #cccccc; /* Light gray for paragraph text */
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right; /* Align contact info to the right */
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f4b400;
+}
+
+/* Footer Contact */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+.footer-contact a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #f4b400;
+}
+
+.footer-contact i {
+    color: #f4b400; /* Icon color */
+    font-size: 1.2rem;
+}
+
+/* Footer Social */
+.footer-social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social li a {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social li a:hover {
+    color: #f4b400;
+    transform: scale(1.1); /* Subtle zoom effect */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding-top: 30px;
+    font-size: 0.9rem;
+    color: #aaaaaa; /* Light gray text */
+}
+
+.footer-bottom p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-bottom a {
+    color: #f4b400; /* Theme yellow for link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #ff9e40; /* Slightly brighter yellow on hover */
+}
+
+/* Hover Effects for Interactivity */
+.footer-column:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* Animations (AOS) */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F4F4; /* Light gray background for the track */
+    border-radius: 10px; /* Rounded track for a modern look */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F4B400; /* Yellow thumb to match the theme */
+    border-radius: 10px; /* Rounded thumb for consistency */
+    border: 2px solid #FFFFFF; /* White border for contrast */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF9E40; /* Darker yellow on hover for interactivity */
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #F4B400 #F4F4F4; /* Thumb color followed by track color */
 }
